@@ -2,22 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-x: clip;
+}
+
+/*
+ * RGB triplets (no commas) so Tailwind can build e.g. bg-brand-surface/90.
+ * Palette matches DameD logo: blush, rose, gold.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 255 245 249;
+  --foreground: 63 36 40;
+  --brand-muted: 122 92 98;
+  --brand-border: 243 196 214;
+  --brand-surface: 255 255 255;
+  --brand-accent: 154 114 9;
+  --brand-accent-hover: 184 134 11;
+  --brand-highlight: 253 238 244;
+  --brand-deep: 157 23 77;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 20 12 16;
+    --foreground: 255 245 249;
+    --brand-muted: 196 163 173;
+    --brand-border: 77 38 51;
+    --brand-surface: 28 16 21;
+    --brand-accent: 212 168 87;
+    --brand-accent-hover: 228 188 116;
+    --brand-highlight: 45 24 32;
+    --brand-deep: 249 168 212;
   }
 }
 
+/* Base text/bg come from layout (Tailwind). Only add the soft wash here. */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  min-width: 0;
+  background-image: radial-gradient(
+    ellipse 120% 80% at 50% -20%,
+    rgb(252 231 243 / 0.85),
+    transparent
+  );
+  background-attachment: fixed;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: radial-gradient(
+      ellipse 100% 60% at 50% 0%,
+      rgb(157 23 77 / 0.18),
+      transparent
+    );
+  }
 }
 
 @layer utilities {

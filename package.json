@@ -1,9 +1,12 @@
 {
-  "name": "web",
+  "name": "online-prodaja-garderobe",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "node scripts/clean.cjs",
     "dev": "next dev",
+    "dev:turbo": "next dev --turbo",
+    "dev:clean": "npm run clean && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
